@@ -2,6 +2,8 @@ import React from 'react'
 import { HiSearch } from "react-icons/hi";
 import "../style/NavBar.css";
 import { useState } from 'react';
+import Movies from './Movies';
+import { Routes, Route } from 'react-router-dom';
 
 
 function NavBar() {
@@ -27,6 +29,9 @@ function NavBar() {
                     </div>
                 </div>
             </nav>
+            <Routes >
+                <Route path="/" element={< Movies />} />
+            </Routes>
 
         </>
     )
