@@ -7,25 +7,28 @@ import { Routes, Route, NavLink } from 'react-router-dom';
 import TvShows from './TvShows';
 import Trendings from './Trends';
 import Pricing from './Pricing';
+export const Container = React.createContext()
+
 
 
 function NavBar() {
     const [toggle, setToggle] = useState(true);
     return (
+        <Container.Provider value={toggle}>
         <>
             <nav className={toggle ? "" : "navBarColor"} >
                 <div className="nav-options">
                     <h1 id={toggle ? "" : "heading"}>MYFLIX</h1>
-                    <NavLink to="/">
+                    <NavLink to="/" style={({isActive}) => { return {color:isActive? "#fff" : "#EE9B00"}}}>
                         <span id={toggle ? "Movies" : "MoviesLight"}>Movies</span>
                     </NavLink>
-                    <NavLink to="/tvShows">
+                    <NavLink to="/tvShows" style={({isActive}) => { return {color:isActive? "#fff" : "#EE9B00"}}}>
                     <span id={toggle ? "Movies" : "MoviesLight"}>Tv Shows</span>
                     </NavLink>
-                    <NavLink to="/trendings">
+                    <NavLink to="/trendings" style={({isActive}) => { return {color:isActive? "#fff" : "#EE9B00"}}}>
                     <span id={toggle ? "Movies" : "MoviesLight"}>Trendings</span>
                     </NavLink>
-                    <NavLink to="/princing">
+                    <NavLink to="/princing" style={({isActive}) => { return {color:isActive? "#fff" : "#EE9B00"}}}>
                     <span id={toggle ? "Movies" : "MoviesLight"}>Pricing</span>
                     </NavLink>
                     
@@ -49,6 +52,7 @@ function NavBar() {
             </Routes>
 
         </>
+        </Container.Provider>
     )
 }
 
