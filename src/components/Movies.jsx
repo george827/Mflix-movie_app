@@ -13,6 +13,7 @@ function Movies() {
   const Api = " https://api.themoviedb.org/3/discover/movie"
   const img = "https://image.tmdb.org/t/p/w500/"
   const noImg = "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"
+  const [trailer, setTrailer] = useState(true)
 
   const MovieCall = async () => {
     const data = await axios.get(Api, {
@@ -36,10 +37,10 @@ function Movies() {
           {movieData.map((movie) => {
             return (
               <>
-                <div id="container">
-                  < AiFillPlayCircle id="playIcon" color='green' fontSize={40} />
+                <div id={ trailer ? "container" : "NoContainer"}>
+                  < AiFillPlayCircle id="playIcon" color='#fff' fontSize={40} />
                   <img src={movie.poster_path ? `${img}${movie.poster_path}` : noImg} alt="" />
-                  <h3>{movie.title}</h3>
+                  <h3 id={movie.title.lenght > 28 ? "smaller-Text" : "" } className={toggle ? "DarkTheme" : "LightThemeClose" }>{movie.title}</h3>
                 </div>
               </>
             )

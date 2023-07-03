@@ -14,7 +14,7 @@ export const Container = React.createContext()
 function NavBar() {
     const [toggle, setToggle] = useState(true);
     return (
-        <Container.Provider value={toggle}>
+        <Container.Provider value={{toggle}}>
         <>
             <nav className={toggle ? "" : "navBarColor"} >
                 <div className="nav-options">
