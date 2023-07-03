@@ -13,6 +13,7 @@ export const Container = React.createContext()
 
 function NavBar() {
     const [toggle, setToggle] = useState(true);
+    const [InputValue, setInputValue] = useState("")
     return (
         <Container.Provider value={{toggle}}>
         <>
@@ -34,7 +35,7 @@ function NavBar() {
                     
                 </div>
                 <div className="input-group">
-                    <input type="text" className="search-bar" placeholder="Search what ever you want" />
+                    <input type="text" className="search-bar" placeholder="Search what ever you want" onChange={(e) => setInputValue(e.target.value)} />
                     < HiSearch fontSize={21} color="green" id='search' />
 
                     <div id="Color-switcher" onClick={() => setToggle(!toggle)}>
