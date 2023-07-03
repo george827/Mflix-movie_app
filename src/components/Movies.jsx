@@ -9,7 +9,8 @@ import { Container } from './NavBar';
 
 function Movies() {
   const [movieData, setMovieData] = useState([])
-  const { toggle } = useContext(Container)
+  const { toggle, InputValue } = useContext(Container)
+  const input = InputValue
   const Api = " https://api.themoviedb.org/3/discover/movie"
   const img = "https://image.tmdb.org/t/p/w500/"
   const noImg = "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"
@@ -19,6 +20,7 @@ function Movies() {
     const data = await axios.get(Api, {
       params: {
         api_key: "09543633934773fe0f7b19a738612ce3",
+        query: input,
       }
     })
     const res = data.data.results
