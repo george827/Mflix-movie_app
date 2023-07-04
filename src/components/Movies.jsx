@@ -12,7 +12,7 @@ function Movies() {
   const { toggle, InputValue } = useContext(Container)
   const input = InputValue
   const shown = input ? "search" : "discover"
-  const Api = " https://api.themoviedb.org/3/discover/movie"
+  const Api = `https://api.themoviedb.org/3/${shown}/movie`
   const img = "https://image.tmdb.org/t/p/w500/"
   const noImg = "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"
   const [trailer, setTrailer] = useState(true)
