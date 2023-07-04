@@ -28,7 +28,7 @@ function Movies() {
   }
   useEffect(() => {
     MovieCall()
-  }, [])
+  }, [input])
 
   console.log(movieData)
 
