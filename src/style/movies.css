@@ -81,3 +81,7 @@ body{
 .LightThemeClose{
     color: #ff206e;
 }
+
+.my-remover {
+    display: flex
+}
