@@ -84,4 +84,5 @@ body{
 
 .my-remover {
     display: flex
+    justify-content: space-between;
 }
