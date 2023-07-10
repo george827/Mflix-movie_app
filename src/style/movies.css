@@ -83,7 +83,7 @@ body{
 }
 
 .my-remover {
-    display: flex
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 200px;
