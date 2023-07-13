@@ -36,7 +36,7 @@ function Movies() {
   return (
     <>
       <div className={toggle ? "mainBgColor" : "secondaryBgColor"}>
-        <div className="movies-container get-green">
+        <div className="movies-container">
           {movieData.map((movie) => {
             return (
               <>

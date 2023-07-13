@@ -43,18 +43,22 @@ body{
 .movies-container img:hover{
     transform: scale(1.05);
 }
+
 #container{
     position: relative;
 }
+
 #hide{
     display: none;
 }
+
 #smaller-Text{
     width: 100%;
     font-size: 14px;
     display: flex;
     justify-content: center;
 }
+
 #playIcon{
     position: absolute;
     bottom: 70px;
@@ -63,21 +67,26 @@ body{
     z-index: 100;
     cursor: pointer;
 }
+
 #Exit1{
     position: absolute;
     margin-left: 475px;
     margin-top: 67px;
     z-index: 999;
 }
+
 #Nothing{
     color: green;
 }
+
 #NoContainer{
     opacity: 0.35;
 }
+
 .DarkTheme{
     color:#fff;
 }
+
 .LightThemeClose{
     color: #ff206e;
 }
