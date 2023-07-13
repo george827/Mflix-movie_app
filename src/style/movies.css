@@ -82,12 +82,3 @@ body{
     color: #ff206e;
 }
 
-
-.my-remover {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 200px;
-    height: 300px;
-    min-height: 200px;
-}
