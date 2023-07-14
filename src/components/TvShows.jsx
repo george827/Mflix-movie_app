@@ -48,7 +48,7 @@ function TvShows() {
               </div>
             )
           })}
-          <AiOutlineClose id={toggle ? "Exit1" : "Nothing"} className={toggle ? "DarkTheme" : "LightThemeClose"} onClick={() => setTrailer(true)}
+          <AiOutlineClose id={trailer ? "Nothing" : "Exit1"} className={toggle ? "DarkTheme" : "LightThemeClose"} onClick={() => setTrailer(true)}
           fontSize={55}
           color='#fff'
           cursor={"pointer"}

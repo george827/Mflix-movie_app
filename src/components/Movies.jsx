@@ -1,7 +1,7 @@
 import { React, useContext, useEffect, useState } from 'react'
 import "../style/movies.css"
 import axios from 'axios'
-import { AiFillPlayCircle } from "react-icons/ai";
+import { AiFillPlayCircle, AiOutlineClose } from "react-icons/ai";
 import { Container } from './NavBar';
 
 // "https://api.themoviedb.org/3/movie/550?api_key=0a2b0b0c0d0e0f0a0b0c0d0e0f0a2b0b"
@@ -43,7 +43,7 @@ function Movies() {
                 <div id={ trailer ? "container" : "NoContainer"}>
                   < AiFillPlayCircle id="playIcon" color='#fff' fontSize={40} />
                   <img src={movie.poster_path ? `${img}${movie.poster_path}` : noImg} alt="" />
-                  <h3 id={movie.title.lenght > 28 ? "smaller-Text" : "" } className={toggle ? "DarkTheme" : "LightThemeClose" }>{movie.title}</h3>
+                  <h3 id={movie.title.lenght > 28 ? "smaller-Text" : "" } className={toggle ? "DarkTheme" : "LightThemeClose" } onClick={() => TvShowTitle(shows)} >{movie.title}</h3>
                 </div>
               </>
             )
@@ -51,6 +51,11 @@ function Movies() {
           }
         </div>
       </div>
+      <AiOutlineClose id={trailer ? "Nothing" : "Exit1"} className={toggle ? "DarkTheme" : "LightThemeClose"} onClick={() => setTrailer(true)}
+          fontSize={55}
+          color='#fff'
+          cursor={"pointer"}
+          />
     </>
   )
 }
