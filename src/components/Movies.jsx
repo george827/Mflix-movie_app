@@ -43,7 +43,12 @@ function Movies() {
                 <div id={ trailer ? "container" : "NoContainer"}>
                   < AiFillPlayCircle id="playIcon" color='#fff' fontSize={40} />
                   <img src={movie.poster_path ? `${img}${movie.poster_path}` : noImg} alt="" />
-                  <h3 id={movie.title.lenght > 28 ? "smaller-Text" : "" } className={toggle ? "DarkTheme" : "LightThemeClose" } onClick={() => TvShowTitle(shows)} >{movie.title}</h3>
+                  <h3 
+                  id={movie.title.lenght > 28 ? "smaller-Text" : "" } 
+                  className={toggle ? "DarkTheme" : "LightThemeClose" } 
+                  onClick={() => TvShowTitle(shows)} 
+                  >
+                    {movie.title}</h3>
                 </div>
               </>
             )
@@ -51,11 +56,14 @@ function Movies() {
           }
         </div>
       </div>
-      <AiOutlineClose id={trailer ? "Nothing" : "Exit1"} className={toggle ? "DarkTheme" : "LightThemeClose"} onClick={() => setTrailer(true)}
-          fontSize={55}
-          color='#fff'
-          cursor={"pointer"}
-          />
+      <AiOutlineClose 
+      id={trailer ? "Nothing" : "Exit1"} 
+      className={toggle ? "DarkTheme" : "LightThemeClose"} 
+      onClick={() => setTrailer(true)}
+      fontSize={55}
+      color='#fff'
+      cursor={"pointer"}
+      />
     </>
   )
 }
