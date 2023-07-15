@@ -31,7 +31,11 @@ function Movies() {
     MovieCall()
   }, [input])
 
-  console.log(movieData)
+  // console.log(movieData)
+  const MoviesTitle = (shows) => {
+    setTitle(shows.title)
+    setTrailer(!trailer)
+  }
 
   return (
     <>
@@ -46,7 +50,7 @@ function Movies() {
                   <h3 
                   id={movie.title.lenght > 28 ? "smaller-Text" : "" } 
                   className={toggle ? "DarkTheme" : "LightThemeClose" } 
-                  onClick={() => TvShowTitle(shows)} 
+                  onClick={() => MoviesTitle(movie)} 
                   >
                     {movie.title}</h3>
                 </div>
