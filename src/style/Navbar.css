@@ -127,4 +127,8 @@ span #HomeLight:hover, #MoviesLight:hover, #TrendingLight:hover, #PricingLight:h
     position: absolute;
     margin-left: 310px;
 }
+
+.app-container {
+    width: 100vw;
+}
  
