@@ -45,16 +45,16 @@ function Movies() {
           {movieData.map((movie) => {
             return (
               <>
-                <div id={ trailer ? "container" : "NoContainer"}>
+                <div id={trailer ? "container" : "NoContainer"}>
                   < AiFillPlayCircle id={trailer ? "playIcon" : "hide"} color='#fff' fontSize={40}
-                  onClick={() => MoviesTitle(movie)}
+                    onClick={() => MoviesTitle(movie)}
                   />
                   <img src={movie.poster_path ? `${img}${movie.poster_path}` : noImg} alt=""
-                  onClick={() => MoviesTitle(movie)}
+                    onClick={() => MoviesTitle(movie)}
                   />
-                  <h3 
-                  id={movie.title.lenght > 28 ? "smaller-Text" : "" } 
-                  className={toggle ? "DarkTheme" : "LightThemeClose" }  
+                  <h3
+                    id={movie.title.lenght > 28 ? "smaller-Text" : ""}
+                    className={toggle ? "DarkTheme" : "LightThemeClose"}
                   >
                     {movie.title}</h3>
                 </div>
@@ -62,16 +62,16 @@ function Movies() {
             )
           })
           }
+          <AiOutlineClose
+            id={trailer ? "Nothing" : "Exit1"}
+            className={toggle ? "DarkTheme" : "LightThemeClose"}
+            onClick={() => setTrailer(true)}
+            fontSize={55}
+            color='#fff'
+            cursor={"pointer"}
+          />
         </div>
       </div>
-      <AiOutlineClose 
-      id={trailer ? "Nothing" : "Exit1"} 
-      className={toggle ? "DarkTheme" : "LightThemeClose"} 
-      onClick={() => setTrailer(true)}
-      fontSize={55}
-      color='#fff'
-      cursor={"pointer"}
-      />
     </>
   )
 }
