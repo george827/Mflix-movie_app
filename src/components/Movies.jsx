@@ -16,6 +16,7 @@ function Movies() {
   const img = "https://image.tmdb.org/t/p/w500/"
   const noImg = "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"
   const [trailer, setTrailer] = useState(true)
+  const [movieTitle, setMovieTitle] = useState('')
 
   const MovieCall = async () => {
     const data = await axios.get(Api, {
@@ -32,8 +33,8 @@ function Movies() {
   }, [input])
 
   // console.log(movieData)
-  const MoviesTitle = (shows) => {
-    setTitle(shows.title)
+  const MoviesTitle = (movie) => {
+    setMovieTitle(movie.title)
     setTrailer(!trailer)
   }
 
@@ -45,12 +46,15 @@ function Movies() {
             return (
               <>
                 <div id={ trailer ? "container" : "NoContainer"}>
-                  < AiFillPlayCircle id="playIcon" color='#fff' fontSize={40} />
-                  <img src={movie.poster_path ? `${img}${movie.poster_path}` : noImg} alt="" />
+                  < AiFillPlayCircle id={trailer ? "playIcon" : "hide"} color='#fff' fontSize={40}
+                  onClick={() => MoviesTitle(movie)}
+                  />
+                  <img src={movie.poster_path ? `${img}${movie.poster_path}` : noImg} alt=""
+                  onClick={() => MoviesTitle(movie)}
+                  />
                   <h3 
                   id={movie.title.lenght > 28 ? "smaller-Text" : "" } 
-                  className={toggle ? "DarkTheme" : "LightThemeClose" } 
-                  onClick={() => MoviesTitle(movie)} 
+                  className={toggle ? "DarkTheme" : "LightThemeClose" }  
                   >
                     {movie.title}</h3>
                 </div>
