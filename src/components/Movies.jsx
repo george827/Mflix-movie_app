@@ -29,7 +29,9 @@ function Movies() {
     setMovieData(res)
   }
   useEffect(() => {
+    setTimeout(() => {
     MovieCall()
+    }, 100)
   }, [input])
 
   // console.log(movieData)
