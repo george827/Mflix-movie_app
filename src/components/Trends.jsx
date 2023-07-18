@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import { Container } from './NavBar';
 import { AiFillPlayCircle, AiOutlineClose } from "react-icons/ai";
 import "../style/movies.css"
@@ -10,6 +10,9 @@ function Trends() {
   const TrendsShown = "/trending/all/week";
   const [TrendsArray, setTrendsArray] = useState([])
   const [trailer, setTrailer] = useState(true)
+  const img = "https://image.tmdb.org/t/p/w500/"
+  const noImg = "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"
+
   const Trends = async () => {
     const data = await axios.get(`${Api}${TrendsShown}`, {
       params: {
@@ -24,7 +27,10 @@ function Trends() {
     Trends()
   }, [])
 
-  console.log(TrendsArray);
+  const TrendsTitle = (trend) => {
+    setTrailer(false)
+    setTrendsArray(trend)
+  }
 
   return (
     <>
@@ -36,13 +42,11 @@ function Trends() {
                 <div id={trailer ? "container" : "NoContainer"}>
                   <AiFillPlayCircle color="#fff"
                     fontSize={40} id={trailer ? "playIcon" : "hide"}
-                    onClick={() => TvShowTitle(shows)} />
-                  <img src={shows.poster_path ? `${img}${shows.poster_path}` : noImg} alt=""
-                    onClick={() => TvShowTitle(shows)}
-                  />
-                </div>
-                <img src={`https://image.tmdb.org/t/p/w500${trend.poster_path}`} alt={trend.title} />
+                    onClick={() => TrendsTitle(trend)} />
+                  <img src={trend.poster_path ? `${img}${trend.poster_path}` : noImg} alt={trend.title} onClick={() => TrendsTitle(trend)} />
                 <h3>{trend.title}</h3>
+                </div>
+                
               </>
             )
           }
