@@ -1,11 +1,13 @@
 body{
     overflow-x: hidden;
 }
+
 .movies-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .mainBgColor{
     background-color:#0c1e25;
     width: 100%;
