@@ -47,7 +47,7 @@ function Trends() {
                     onClick={() => TrendsTitle(trend)} />
                   <img src={trend.poster_path ? `${img}${trend.poster_path}` : noImg} alt={trend.title} onClick={() => TrendsTitle(trend)} />
                 <h3
-                id={movie.title.lenght > 28 ? "smaller-Text" : ""}
+                id="smaller-Text"
                 className={toggle ? "DarkTheme" : "LightThemeClose"}
                 >{trend.title}</h3>
                 </div>
