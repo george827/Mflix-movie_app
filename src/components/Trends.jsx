@@ -2,13 +2,14 @@ import axios from 'axios';
 import React, { useEffect, useContext, useState } from 'react'
 import { Container } from './NavBar';
 import { AiFillPlayCircle, AiOutlineClose } from "react-icons/ai";
-import "../style/movies.css"
+ 
 
 function Trends() {
   const Api = `https://api.themoviedb.org/3`
   const { toggle } = useContext(Container)
   const TrendsShown = "/trending/all/week";
   const [TrendsArray, setTrendsArray] = useState([])
+  const [trendsTitle, setTrendsTitle] = useState('')
   const [trailer, setTrailer] = useState(true)
   const img = "https://image.tmdb.org/t/p/w500/"
   const noImg = "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"
@@ -28,7 +29,8 @@ function Trends() {
   }, [])
 
   const TrendsTitle = (trend) => {
-    setTrailer(false)
+    setTrendsTitle(trend.title)
+    setTrailer(!trailer)
     setTrendsArray(trend)
   }
 
