@@ -27,8 +27,10 @@ function TvShows() {
   }
 
   useEffect(() => {
-    TvShows()
-  }, [])
+    setTimeout(() => {
+      TvShows()
+    }, 50)
+  }, [input])
   console.log(showData);
 
   const TvShowTitle = (shows) => {

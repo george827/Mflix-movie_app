@@ -7,7 +7,8 @@ import "../style/movies.css"
 
 function Trends() {
   const Api = `https://api.themoviedb.org/3`
-  const { toggle } = useContext(Container)
+  const { toggle, InputValue } = useContext(Container)
+  const input = InputValue;
   const TrendsShown = "/trending/all/week";
   const [TrendsArray, setTrendsArray] = useState([])
   const [trendsTitle, setTrendsTitle] = useState('')
@@ -19,6 +20,7 @@ function Trends() {
     const data = await axios.get(`${Api}${TrendsShown}`, {
       params: {
         api_key: "09543633934773fe0f7b19a738612ce3",
+        query: input,
       }
     })
     const res = data.data.results;
@@ -26,8 +28,10 @@ function Trends() {
   }
 
   useEffect(() => {
-    Trends()
-  }, [])
+    setTimeout(() => {
+      Trends()
+    }, 100)
+  }, [input])
 
   const TrendsTitle = (trend) => {
     setTrendsTitle(trend.title)
