@@ -69,8 +69,8 @@ body{
 }
 
 #Exit1{
-    position: absolute;
-    margin-left: 300px;
+    position: fixed;
+    margin-left: 605px;
     margin-top: 67px;
     z-index: 999;
 }

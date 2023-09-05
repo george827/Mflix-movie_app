@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import { AiFillPlayCircle, AiOutlineClose } from "react-icons/ai";
 import { Container } from './NavBar';
 import "../style/movies.css"
+import TrailerTv from '../Trailers/TrailerTv';
 
 function TvShows() {
   const { toggle, InputValue } = useContext(Container)
@@ -10,7 +11,7 @@ function TvShows() {
   const img = "https://image.tmdb.org/t/p/w500/";
   const noImg = "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"
   const [trailer, setTrailer] = useState(true)
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState("");
   const input = InputValue;
   const shown = input ? "search" : "discover"
   const Api = `https://api.themoviedb.org/3/${shown}/tv`;
@@ -29,12 +30,12 @@ function TvShows() {
   useEffect(() => {
     setTimeout(() => {
       TvShows()
-    }, 50)
+    }, 100)
   }, [input])
   console.log(showData);
 
   const TvShowTitle = (shows) => {
-    setTitle(shows.title)
+    setTitle(shows.name)
     setTrailer(!trailer)
   }
   return (
@@ -56,6 +57,7 @@ function TvShows() {
               </div>
             )
           })}
+          {trailer ? console.log : <TrailerTv tvShowTitle={title} />}
           <AiOutlineClose 
           id={trailer ? "Nothing" : "Exit1"} 
           className={toggle ? "DarkTheme" : "LightThemeClose"} 
@@ -70,4 +72,4 @@ function TvShows() {
   )
 }
 
-export default TvShows
+export default TvShows;

@@ -3,6 +3,7 @@ import React, { useEffect, useContext, useState } from 'react'
 import { Container } from './NavBar';
 import { AiFillPlayCircle, AiOutlineClose } from "react-icons/ai";
 import "../style/movies.css"
+import TrailerTv from '../Trailers/TrailerTv';
  
 
 function Trends() {
@@ -60,6 +61,7 @@ function Trends() {
             )
           }
           )}
+          {trailer ? console.log : <TrailerTv tvShowTitle={trendsTitle} />}
           <AiOutlineClose
             id={trailer ? "Nothing" : "Exit1"}
             className={toggle ? "DarkTheme" : "LightThemeClose"}

@@ -1,11 +1,11 @@
 .player{
-    position: absolute;
+    position: fixed;
     margin-top: 120px;
     z-index:999;
 }
 .Container{
     display: none;
-    position:absolute;
+    position: fixed;
     z-index: 100;
 }
 #TrailerMovie-name-dark{
