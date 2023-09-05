@@ -1,6 +1,6 @@
 import React from 'react'
 import { HiSearch } from "react-icons/hi";
-import "../style/NavBar.css";
+import "../style/Navbar.css";
 import { useState } from 'react';
 import Movies from './Movies';
 import { Routes, Route, NavLink } from 'react-router-dom';
