@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useContext, useState } from 'react'
 import { Container } from './NavBar';
 import { AiFillPlayCircle, AiOutlineClose } from "react-icons/ai";
+import "../style/movies.css"
  
 
 function Trends() {
@@ -31,7 +32,6 @@ function Trends() {
   const TrendsTitle = (trend) => {
     setTrendsTitle(trend.title)
     setTrailer(!trailer)
-    setTrendsArray(trend)
   }
 
   return (
