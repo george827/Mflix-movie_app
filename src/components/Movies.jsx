@@ -3,6 +3,7 @@ import "../style/movies.css"
 import axios from 'axios'
 import { AiFillPlayCircle, AiOutlineClose } from "react-icons/ai";
 import { Container } from './NavBar';
+import TrailerMovies from '../Trailers/TrailerMovies';
 
 // "https://api.themoviedb.org/3/movie/550?api_key=0a2b0b0c0d0e0f0a0b0c0d0e0f0a2b0b"
 // https://static.vecteezy.com/system/resources/thumbnails/004/141/669/small/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg
@@ -62,8 +63,8 @@ function Movies() {
                 </div>
               </>
             )
-          })
-          }
+          })}
+          {trailer ? "": <TrailerMovies moviesTitle={movieTitle}/>}
           <AiOutlineClose
             id={trailer ? "Nothing" : "Exit1"}
             className={toggle ? "DarkTheme" : "LightThemeClose"}
