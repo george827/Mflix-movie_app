@@ -20,7 +20,7 @@ useEffect(() => {
     <>
       <div className="Container"></div>
       <div className="player">
-      <ReactPlayer url={videoURL} controls={true}/>
+      <ReactPlayer url={videoURL} controls={true} width={'1000px'} height={'700px'} muted={true}/>
       </div>
     </>
   );
