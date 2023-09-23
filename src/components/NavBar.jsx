@@ -15,52 +15,54 @@ import { AiOutlineAlignLeft } from "react-icons/ai";
 function NavBar() {
   const [toggle, setToggle] = useState(true);
   const [InputValue, setInputValue] = useState("");
-  const [dropdown, setDropdown] = useState(false);
+  const [dropdown, setDropdown] = useState(true);
   return (
     <Container.Provider value={{ toggle, InputValue }}>
       <>
         <nav className={toggle ? "" : "navBarColor"} id="nav">
-          <div className="main-navBar">
-            <div className="nav-options">
-              <h1 id={toggle ? "" : "heading"}>MYFLIX</h1>
-              <NavLink
-                to="/"
-                style={({ isActive }) => {
-                  return { color: isActive && toggle ? "#fff" : "#EE9B00" };
-                }}
-              >
-                <span id={toggle ? "Movies" : "MoviesLight"}>Movies</span>
-              </NavLink>
-              <NavLink
-                to="/tvShows"
-                style={({ isActive }) => {
-                  return { color: isActive ? "#fff" : "#EE9B00" };
-                }}
-              >
-                <span id={toggle ? "Movies" : "MoviesLight"}>Tv Shows</span>
-              </NavLink>
-              <NavLink
-                to="/trendings"
-                style={({ isActive }) => {
-                  return { color: isActive ? "#fff" : "#EE9B00" };
-                }}
-              >
-                <span id={toggle ? "Movies" : "MoviesLight"}>Trendings</span>
-              </NavLink>
-              <NavLink
-                to="/princing"
-                style={({ isActive }) => {
-                  return { color: isActive ? "#fff" : "#EE9B00" };
-                }}
-              >
-                <span id={toggle ? "Movies" : "MoviesLight"}>Pricing</span>
-              </NavLink>
+          <div className="Nav_Container" >
+            <div className="main-navBar" id={dropdown ? "dropdown" : ""}>
+              <div className="nav-options">
+                <h1 id={toggle ? "" : "heading"}>MYFLIX</h1>
+                <NavLink
+                  to="/"
+                  style={({ isActive }) => {
+                    return { color: isActive && toggle ? "#fff" : "#EE9B00" };
+                  }}
+                >
+                  <span id={toggle ? "Movies" : "MoviesLight"}>Movies</span>
+                </NavLink>
+                <NavLink
+                  to="/tvShows"
+                  style={({ isActive }) => {
+                    return { color: isActive ? "#fff" : "#EE9B00" };
+                  }}
+                >
+                  <span id={toggle ? "Movies" : "MoviesLight"}>Tv Shows</span>
+                </NavLink>
+                <NavLink
+                  to="/trendings"
+                  style={({ isActive }) => {
+                    return { color: isActive ? "#fff" : "#EE9B00" };
+                  }}
+                >
+                  <span id={toggle ? "Movies" : "MoviesLight"}>Trendings</span>
+                </NavLink>
+                <NavLink
+                  to="/princing"
+                  style={({ isActive }) => {
+                    return { color: isActive ? "#fff" : "#EE9B00" };
+                  }}
+                >
+                  <span id={toggle ? "Movies" : "MoviesLight"}>Pricing</span>
+                </NavLink>
+              </div>
             </div>
             <div className="input-group">
               <input
                 type="text"
                 className="search-bar"
-                placeholder="Search what ever you want"
+                placeholder="Search.."
                 onChange={(e) => setInputValue(e.target.value)}
               />
               <HiSearch fontSize={21} color="green" id="search" />
