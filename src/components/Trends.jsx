@@ -41,7 +41,7 @@ function Trends() {
 
   return (
     <>
-      <div className={toggle ? "mainBgColor" : "secondaryBgColor"}>
+      <div className={toggle ? "mainBgColor" : "secondaryBgColor"} id="main-container">
         <div className="movies-container">
           {TrendsArray.map((trend) => {
             return (

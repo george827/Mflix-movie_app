@@ -40,7 +40,7 @@ function TvShows() {
   }
   return (
     <>
-      <div className={toggle ? "mainBgColor" : "secondaryBgColor"}>
+      <div className={toggle ? "mainBgColor" : "secondaryBgColor"} id="main-container">
         <div className="movies-container">
           {showData.map((shows) => {
             return (
