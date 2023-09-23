@@ -1,12 +1,13 @@
 .player{
     position: fixed;
     margin-top: 120px;
-    z-index:999;
+    z-index: 7;
 }
 .Container{
     display: none;
     position: fixed;
-    z-index: 100;
+    z-index: 7;
+    width: 100%;
 }
 #TrailerMovie-name-dark{
     display: flex;
@@ -25,4 +26,12 @@
     top: -100px;
     font-size: 2.5rem;
     color: #ff206e;
+}
+
+.react-player {
+    position: fixed;
+    top: 30%;
+    left: 15%;
+    right: 15%;
+    z-index: 7;
 }

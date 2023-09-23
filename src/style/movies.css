@@ -79,8 +79,8 @@ body{
 
 #Exit1{
     position: fixed;
-    margin-left: 605px;
-    margin-top: 67px;
+    left: 81%;
+    top: 22%;
     z-index: 4;
 }
 
@@ -106,4 +106,13 @@ body{
 
 #main-container {
     margin-top: 80px;
+}
+
+@media only screen and (max-width: 768px) {
+    #Exit1{
+        position: fixed;
+        left: 75%;
+        top: 23%;
+        z-index: 4;
+    }
 }

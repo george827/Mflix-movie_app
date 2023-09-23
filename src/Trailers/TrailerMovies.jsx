@@ -20,7 +20,7 @@ useEffect(() => {
     <>
       <div className="Container"></div>
       <div className="player">
-      <ReactPlayer url={videoURL} controls={true}  muted={false}/> 
+      <ReactPlayer url={videoURL} controls={true}  muted={false} width='70%'  className='react-player'/> 
        {/* https://www.npmjs.com/package/react-player */}
       </div>
     </>
