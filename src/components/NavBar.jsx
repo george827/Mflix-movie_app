@@ -7,6 +7,8 @@ import { Routes, Route, NavLink } from 'react-router-dom';
 import TvShows from './TvShows';
 import Trendings from './Trends';
 import Pricing from './Pricing';
+import moon from "../assets/moon.png"
+import sun from "../assets/sun.png"
 export const Container = React.createContext()
 
 
@@ -42,9 +44,10 @@ function NavBar() {
                         < HiSearch fontSize={21} color="green" id='search' />
 
                         <div id="Color-switcher" onClick={() => setToggle(!toggle)}>
-                            <div id={toggle ? "Color-switcher-mover" : "Color-switcher-moved"}>
+                            {/* <div id={toggle ? "Color-switcher-mover" : "Color-switcher-moved"}> */}
 
-                            </div>
+                            {/* </div> */}
+                            <img src={toggle ? moon : sun} alt="dark-theme" width = "35px"/>
                         </div>
                     </div>
                 </nav>
